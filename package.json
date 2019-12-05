@@ -1,0 +1,17 @@
+{
+  "name": "pachong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getList.js",
+  "scripts": {
+    "dev": "node getList.js && node getDetail.js && node writeXlsx.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "colors": "^1.4.0",
+    "jsdom": "^15.2.1",
+    "node-xlsx": "^0.15.0"
+  }
+}
