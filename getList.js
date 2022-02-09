@@ -29,14 +29,15 @@ var baseUrl = 'http://120.35.30.176'
 var url = `${baseUrl}/3500/noticelist/d03180adb4de41acbb063875889f9af1/`
 let hasLoadArea = false
 let totalSize = 0
-var areaIdx = 14
+var areaIdx = 0
 var num = 20
 let page = 1
 // let targetStr = '直购'
 // let dateReg = /(2019|201812)/ //只找2019年和2018年12月的
 
 var targetStr = '直购'
-let dateReg = /(2019|201812)/
+var targetStr2 = '议价'
+let dateReg = /(2021|202201|202202)/
 
 
 var writeArr = []
@@ -119,7 +120,7 @@ function getData(page,areaIdx){
                 //等于直购并且是匹配对应年度正则的
                 if(dateReg.test(dateStr)){
                     // console.log(dateStr);
-                    if(str.includes(targetStr)){
+                    if(str.includes(targetStr) || str.includes(targetStr2)){
                         var href = item.querySelector('a').getAttribute('href')
                         var detailId = href.split('/')[4]
                         writeArr.push(`${areaList[areaIdx].name}:${detailId}:${date}`)
